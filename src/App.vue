@@ -69,10 +69,10 @@
               <li class="list-group-item" v-for="domain in domains" v-bind:key="domain.name">
                 <div class="row">
                   <div class="col-md">
-                    {{ domain.name }}
+                    {{ domain.name }} 
                   </div>
                   <div class="col-md text-right">
-                    <a class="btn btn-info" href="https://github.com/FelipeFontouraBr" target="_blank">
+                    <a class="btn btn-info" v-bind:href="domain.checkout" target="_blank">
                       <span class="fa fa-shopping-cart"></span>
                     </a>
                   </div>
