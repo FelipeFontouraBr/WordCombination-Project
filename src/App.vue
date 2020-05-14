@@ -101,9 +101,11 @@ export default {
     },
     deletePrefix(prefix) {
       this.prefixes.splice(this.prefixes.indexOf(prefix), 1);//splice->No primeiro parametro irá receber o elemento que vamos deletar
+      this.generate();
     },
     deleteSufix(sufix) {
       this.sufixes.splice(this.sufixes.indexOf(sufix), 1);//1 pq quero eliminir 1 elemento do array
+      this.generate();
     },    
     addSufix(sufix) {
       this.sufixes.push(sufix);
