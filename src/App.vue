@@ -44,7 +44,7 @@
                   </li>                  
                 </ul> 
                  <br/> 
-                <input class="form-control" type="text" placeholder="Digite o prefixo"/>
+                <input class="form-control" type="text" placeholder="Digite o sufixo"/>
               </div>
             </div>
           </div>
@@ -60,7 +60,14 @@ import "bootstrap/dist/css/bootstrap.css"
 import "font-awesome/css/font-awesome.css"
 
 export default {
-  name: 'App'
+  name: 'App',
+  data() {//Método 
+    return { //retorno um objeto que será disponivel para o sistema de tamplate
+      prefixes: ['Air', 'Jet', 'Flight'],
+      sufixes: ['Hub', 'Station', 'Mart']
+    }
+  }
+  
 }
 </script>
 
