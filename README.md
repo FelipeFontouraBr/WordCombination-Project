@@ -1,4 +1,4 @@
-# Name generator for creating domains using Vue.js, GraphQL and Node
+# Name generator for creating domains using Vue.js, GraphQL and Node ![](https://github.com/FelipeFontouraBr/WordCombination-Project/blob/master/public/favicon.ico)
 
 ## Technologies
 ```
@@ -13,6 +13,7 @@
 ```
 
 ### Development application
-```
+
+![img-01](https://github.com/FelipeFontouraBr/WordCombination-Project/blob/master/img/img-01.png)
 
 
