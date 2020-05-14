@@ -37,6 +37,17 @@
             </div>
           </div>
         </div>
+        <br/>
+        <h5>Domains <span class="badge badge-info">{{ domains.length }}</span></h5>
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" v-for="domain in domains" v-bind:key="domain">
+                {{ domain }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,7 +62,8 @@ export default {
   data() {//Método 
     return { //retorno um objeto que será disponivel para o sistema de tamplate
       prefixes: ['Air', 'Jet', 'Flight'],
-      sufixes: ['Hub', 'Station', 'Mart']
+      sufixes: ['Hub', 'Station', 'Mart'],
+      domains: ['AirHub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart']
     }
   }
   
