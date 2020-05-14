@@ -1,5 +1,5 @@
 <template>
-  <div>AppItemList</div>
+  <div></div>
 </template>
 
 <script>

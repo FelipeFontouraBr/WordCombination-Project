@@ -3,7 +3,7 @@
     <div  id="slogan" class="text-center">
       <h1>NameAir</h1>
       <br/>
-      <h6 class="text-secondary">Gerador de nomes utilizando Vue.js, GraphQL e Node</h6>
+      <h6 class="text-secondary">Name generator for creating domains using Vue.js, GraphQL and Node</h6>
     </div>
     <AppItemList></AppItemList>
     <div id="main"><!--Aqui é aonde vamos criar nossa aplicação-->

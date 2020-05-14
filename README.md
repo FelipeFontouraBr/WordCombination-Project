@@ -1,24 +1,18 @@
-# fullstack_vue_graphql_node_1
+# Name generator for creating domains using Vue.js, GraphQL and Node
 
-## Project setup
+## Technologies
 ```
-npm install
-```
+- Vue.js
+- JavaScript
+- HTML 5
+- CSS 3
+- Bootstrap
+- GraphQL
+- Node.js
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
+### Development application
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
