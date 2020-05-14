@@ -9,19 +9,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <h5>Prefixos <span class="badge badge-info">0</span></h5>
+            <h5>Prefixos <span class="badge badge-info">{{ prefixes.length }}</span></h5>
             <div class="card">
               <div class="card-body">
                 <ul class="list-group"><!--Aqui vamos criar listas-->
-                  <li class="list-group-item">
-                    A
+                  <li class="list-group-item" v-for="prefix in prefixes" v-bind:key="prefix">
+                    {{ prefix }}
                   </li>
-                  <li class="list-group-item">
-                    A
-                  </li>
-                   <li class="list-group-item">
-                    A
-                  </li>                  
                 </ul>
                 <br/> 
                 <input class="form-control" type="text" placeholder="Digite o prefixo"/>
@@ -29,26 +23,19 @@
             </div>
           </div>
           <div class="col-md">
-            <h5>Sufixos <span class="badge badge-info">0</span></h5>
+            <h5>Sufixos <span class="badge badge-info">{{ sufixes.length }}</span></h5>
             <div class="card">
               <div class="card-body">
                 <ul class="list-group"><!--Aqui vamos criar listas-->
-                  <li class="list-group-item">
-                    A
+                  <li class="list-group-item" v-for="sufix in sufixes" v-bind:key="sufix">
+                    {{ sufix }}
                   </li>
-                  <li class="list-group-item">
-                    A
-                  </li>
-                   <li class="list-group-item">
-                    A
-                  </li>                  
                 </ul> 
                  <br/> 
                 <input class="form-control" type="text" placeholder="Digite o sufixo"/>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
