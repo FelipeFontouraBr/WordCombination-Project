@@ -5,6 +5,7 @@
       <br/>
       <h6 class="text-secondary">Gerador de nomes utilizando Vue.js, GraphQL e Node</h6>
     </div>
+    <AppItemList></AppItemList>
     <div id="main"><!--Aqui é aonde vamos criar nossa aplicação-->
       <div class="container">
         <div class="row">
@@ -89,9 +90,13 @@
 <script>
 import "bootstrap/dist/css/bootstrap.css"
 import "font-awesome/css/font-awesome.css"
+import AppItemList from "./components/AppItemList"
 
 export default {
   name: 'App',
+  components: {
+    AppItemList
+  },
   data() {//Método 
     return { //retorno um objeto que será disponivel para o sistema de tamplate
       prefix: "",
