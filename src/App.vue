@@ -21,7 +21,7 @@
                 <div class="input-group"><!--Formulário de entrada de dados--> 
                   <input class="form-control" type="text" placeholder="Digite o prefixo"/>
                   <div class="input-group-append">
-                    <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-info" v-on:click="addPrefix"><span class="fa fa-plus"></span></button>
                   </div>
                 </div>                
               </div>
@@ -39,7 +39,7 @@
                  <br/><div class="input-group"><!--Formulário de entrada de dados--> 
                   <input class="form-control" type="text" placeholder="Digite o sufixo"/>
                   <div class="input-group-append">
-                    <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-info" v-on:click="addSufix"><span class="fa fa-plus"></span></button>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,16 @@ export default {
       sufixes: ['Hub', 'Station', 'Mart'],
       domains: ['AirHub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart']
     }
-  }  
+  },
+  //Nesse objeto vamos definir as funções para funcionarem
+  methods: {
+    addPrefix(prefix) {//variavel local chamada (prefix), que vamos adicionar
+      this.prefix.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
+    },
+    addSufix(sufix) {
+      this.sufix.push(sufix);
+    }
+  }
 };
 </script>
 
