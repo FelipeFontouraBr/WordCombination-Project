@@ -14,12 +14,19 @@
               <div class="card-body">
                 <ul class="list-group"><!--Aqui vamos criar listas-->
                   <li class="list-group-item" v-for="prefix in prefixes" v-bind:key="prefix">
-                    {{ prefix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ prefix }}
+                      </div>
+                      <div class="col-md text-right">
+                        <button class="btn btn-info"><span class="fa fa-trash"></span></button><!--Botão de delete-->
+                      </div>
+                    </div>
                   </li>
                 </ul>
                 <br/>
                 <div class="input-group"><!--Formulário de entrada de dados--> 
-                  <input class="form-control" type="text" v-model="prefix" placeholder="Digite o prefixo"/><!--V-model irá fazer a interação da caixa de texto com a propriedade prefix(variavel)-->
+                  <input class="form-control" type="text" v-model="prefix" v-on:keyup.enter="addPrefix(prefix)" placeholder="Digite o prefixo"/><!--V-model irá fazer a interação da caixa de texto com a propriedade prefix(variavel)/keyup.enter, toda vez que der enter vai adicionar-->
                   <div class="input-group-append">
                     <button class="btn btn-info" v-on:click="addPrefix(prefix)"><span class="fa fa-plus"></span></button>
                   </div>
@@ -33,12 +40,19 @@
               <div class="card-body">
                 <ul class="list-group"><!--Aqui vamos criar listas-->
                   <li class="list-group-item" v-for="sufix in sufixes" v-bind:key="sufix">
-                    {{ sufix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ sufix }}
+                      </div>
+                      <div class="col-md text-right">
+                        <button class="btn btn-info"><span class="fa fa-trash"></span></button><!--Botão de delete-->
+                      </div>
+                    </div>                    
                   </li>
                 </ul> 
                  <br/>
                 <div class="input-group"><!--Formulário de entrada de dados--> 
-                  <input class="form-control" type="text" v-model="sufix" placeholder="Digite o sufixo"/>
+                  <input class="form-control" type="text" v-model="sufix" v-on:keyup.enter="addSufix(sufix)" placeholder="Digite o sufixo"/>
                   <div class="input-group-append">
                     <button class="btn btn-info" v-on:click="addSufix(sufix)"><span class="fa fa-plus"></span></button>
                   </div>
@@ -83,10 +97,20 @@ export default {
     addPrefix(prefix) {//variavel local chamada (prefix), que vamos adicionar
       this.prefixes.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
       this.prefix = "";//Depois que clicar, limpa o campo de adicionar
+      this.generate();
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
+      this.generate();
+    },
+    generate(){
+      this.domains = [];//vai gerar um array vazio para que eu posso gerar os prefixo s sufixos
+      for ( const prefix of this.prefixes ) {//Colocar this. para ver as propriedades existentes deste componente
+        for (const sufix of this.sufixes ) {
+            this.domains.push(prefix + sufix);
+        }
+      }
     }
   }
 };
