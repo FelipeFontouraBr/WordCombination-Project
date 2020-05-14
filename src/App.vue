@@ -67,7 +67,16 @@
           <div class="card-body">
             <ul class="list-group">
               <li class="list-group-item" v-for="domain in domains" v-bind:key="domain">
-                {{ domain }}
+                <div class="row">
+                  <div class="col-md">
+                    {{ domain }}
+                  </div>
+                  <div class="col-md text-right">
+                    <a class="btn btn-info" href="https://github.com/FelipeFontouraBr" target="_blank">
+                      <span class="fa fa-shopping-cart"></span>
+                    </a>
+                  </div>
+                </div>                
               </li>
             </ul>
           </div>
