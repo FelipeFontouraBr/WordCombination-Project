@@ -19,7 +19,7 @@
                         {{ prefix }}
                       </div>
                       <div class="col-md text-right">
-                        <button class="btn btn-info"><span class="fa fa-trash"></span></button><!--Botão de delete-->
+                        <button class="btn btn-info" v-on:click="deletePrefix(prefix)"><span class="fa fa-trash"></span></button><!--Botão de delete / o (prefix) esta vindo do v-for-->
                       </div>
                     </div>
                   </li>
@@ -45,7 +45,7 @@
                         {{ sufix }}
                       </div>
                       <div class="col-md text-right">
-                        <button class="btn btn-info"><span class="fa fa-trash"></span></button><!--Botão de delete-->
+                        <button class="btn btn-info" v-on:click="deleteSufix(sufix)"><span class="fa fa-trash"></span></button><!--Botão de delete-->
                       </div>
                     </div>                    
                   </li>
@@ -99,6 +99,12 @@ export default {
       this.prefix = "";//Depois que clicar, limpa o campo de adicionar
       this.generate();
     },
+    deletePrefix(prefix) {
+      this.prefixes.splice(this.prefixes.indexOf(prefix), 1);//splice->No primeiro parametro irá receber o elemento que vamos deletar
+    },
+    deleteSufix(sufix) {
+      this.sufixes.splice(this.sufixes.indexOf(sufix), 1);//1 pq quero eliminir 1 elemento do array
+    },    
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
