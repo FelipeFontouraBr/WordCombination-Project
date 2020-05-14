@@ -13,8 +13,18 @@
             <div class="card">
               <div class="card-body">
                 <ul class="list-group"><!--Aqui vamos criar listas-->
-                  <li class="list-group-item"></li>
-                </ul> 
+                  <li class="list-group-item">
+                    A
+                  </li>
+                  <li class="list-group-item">
+                    A
+                  </li>
+                   <li class="list-group-item">
+                    A
+                  </li>                  
+                </ul>
+                <br/> 
+                <input class="form-control" type="text" placeholder="Digite o prefixo"/>
               </div>
             </div>
           </div>
@@ -22,7 +32,19 @@
             <h5>Sufixos <span class="badge badge-info">0</span></h5>
             <div class="card">
               <div class="card-body">
-                 
+                <ul class="list-group"><!--Aqui vamos criar listas-->
+                  <li class="list-group-item">
+                    A
+                  </li>
+                  <li class="list-group-item">
+                    A
+                  </li>
+                   <li class="list-group-item">
+                    A
+                  </li>                  
+                </ul> 
+                 <br/> 
+                <input class="form-control" type="text" placeholder="Digite o prefixo"/>
               </div>
             </div>
           </div>
