@@ -36,7 +36,8 @@
                     {{ sufix }}
                   </li>
                 </ul> 
-                 <br/><div class="input-group"><!--Formulário de entrada de dados--> 
+                 <br/>
+                <div class="input-group"><!--Formulário de entrada de dados--> 
                   <input class="form-control" type="text" v-model="sufix" placeholder="Digite o sufixo"/>
                   <div class="input-group-append">
                     <button class="btn btn-info" v-on:click="addSufix(sufix)"><span class="fa fa-plus"></span></button>
@@ -81,9 +82,11 @@ export default {
   methods: {
     addPrefix(prefix) {//variavel local chamada (prefix), que vamos adicionar
       this.prefixes.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
+      this.prefix = "";//Depois que clicar, limpa o campo de adicionar
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
+      this.sufix = "";
     }
   }
 };
