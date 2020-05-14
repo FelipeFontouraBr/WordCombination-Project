@@ -88,8 +88,7 @@ export default {
       prefix: "",
       sufix: "",
       prefixes: ['Air', 'Jet', 'Flight'],
-      sufixes: ['Hub', 'Station', 'Mart'],
-      domains: ['AirHub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart']
+      sufixes: ['Hub', 'Station', 'Mart']
     }
   },
   //Nesse objeto vamos definir as funções para funcionarem
@@ -97,30 +96,34 @@ export default {
     addPrefix(prefix) {//variavel local chamada (prefix), que vamos adicionar
       this.prefixes.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
       this.prefix = "";//Depois que clicar, limpa o campo de adicionar
-      this.generate();
-    },
+      },
     deletePrefix(prefix) {
       this.prefixes.splice(this.prefixes.indexOf(prefix), 1);//splice->No primeiro parametro irá receber o elemento que vamos deletar
-      this.generate();
-    },
+      },
     deleteSufix(sufix) {
       this.sufixes.splice(this.sufixes.indexOf(sufix), 1);//1 pq quero eliminir 1 elemento do array
-      this.generate();
-    },    
+      },    
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
-      this.generate();
-    },
-    generate(){
-      this.domains = [];//vai gerar um array vazio para que eu posso gerar os prefixo s sufixos
-      for ( const prefix of this.prefixes ) {//Colocar this. para ver as propriedades existentes deste componente
-        for (const sufix of this.sufixes ) {
-            this.domains.push(prefix + sufix);
-        }
       }
-    }
-  }
+  },
+//Computed Propries -> Recurso do Vue que faz a aplicação ficar mais perfomática e isso baseado em sistema de reatividade do Vue
+    computed: { //Funções que vão estar envolvidas com um watcher e tudo o que elas utilizarem, o Vue irá gerenciar e só ira invocar se for necessario
+      domains(){ //Toda vez que prefix ou sufixe for alterado, irá invocar essa função
+        console.log("generating domains...")
+        const domains = [];//vai gerar um array vazio para que eu posso gerar os prefixo s sufixos
+        for (const prefix of this.prefixes) {//Colocar this. para ver as propriedades existentes deste componente
+          for (const sufix of this.sufixes) {
+              domains.push(prefix + sufix);
+          }
+        }
+        return domains;
+      }
+    },
+  /*created() {//essa propriedade é bom para buscar dados no meu backend, API para trazer info para aplicação
+    this.generate(); //quando carrega a pagina, gera as informações
+  }*/
 };
 </script>
 
