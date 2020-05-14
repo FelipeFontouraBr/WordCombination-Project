@@ -19,9 +19,9 @@
                 </ul>
                 <br/>
                 <div class="input-group"><!--Formulário de entrada de dados--> 
-                  <input class="form-control" type="text" placeholder="Digite o prefixo"/>
+                  <input class="form-control" type="text" v-model="prefix" placeholder="Digite o prefixo"/><!--V-model irá fazer a interação da caixa de texto com a propriedade prefix(variavel)-->
                   <div class="input-group-append">
-                    <button class="btn btn-info" v-on:click="addPrefix"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-info" v-on:click="addPrefix(prefix)"><span class="fa fa-plus"></span></button>
                   </div>
                 </div>                
               </div>
@@ -37,9 +37,9 @@
                   </li>
                 </ul> 
                  <br/><div class="input-group"><!--Formulário de entrada de dados--> 
-                  <input class="form-control" type="text" placeholder="Digite o sufixo"/>
+                  <input class="form-control" type="text" v-model="sufix" placeholder="Digite o sufixo"/>
                   <div class="input-group-append">
-                    <button class="btn btn-info" v-on:click="addSufix"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-info" v-on:click="addSufix(sufix)"><span class="fa fa-plus"></span></button>
                   </div>
                 </div>
               </div>
@@ -70,6 +70,8 @@ export default {
   name: 'App',
   data() {//Método 
     return { //retorno um objeto que será disponivel para o sistema de tamplate
+      prefix: "",
+      sufix: "",
       prefixes: ['Air', 'Jet', 'Flight'],
       sufixes: ['Hub', 'Station', 'Mart'],
       domains: ['AirHub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart']
@@ -78,10 +80,10 @@ export default {
   //Nesse objeto vamos definir as funções para funcionarem
   methods: {
     addPrefix(prefix) {//variavel local chamada (prefix), que vamos adicionar
-      this.prefix.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
+      this.prefixes.push(prefix);//Aqui vamos colocar os prefixos que serão colocados
     },
     addSufix(sufix) {
-      this.sufix.push(sufix);
+      this.sufixes.push(sufix);
     }
   }
 };
