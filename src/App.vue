@@ -17,8 +17,13 @@
                     {{ prefix }}
                   </li>
                 </ul>
-                <br/> 
-                <input class="form-control" type="text" placeholder="Digite o prefixo"/>
+                <br/>
+                <div class="input-group"><!--Formulário de entrada de dados--> 
+                  <input class="form-control" type="text" placeholder="Digite o prefixo"/>
+                  <div class="input-group-append">
+                    <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+                  </div>
+                </div>                
               </div>
             </div>
           </div>
@@ -31,8 +36,12 @@
                     {{ sufix }}
                   </li>
                 </ul> 
-                 <br/> 
-                <input class="form-control" type="text" placeholder="Digite o sufixo"/>
+                 <br/><div class="input-group"><!--Formulário de entrada de dados--> 
+                  <input class="form-control" type="text" placeholder="Digite o sufixo"/>
+                  <div class="input-group-append">
+                    <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -65,9 +74,8 @@ export default {
       sufixes: ['Hub', 'Station', 'Mart'],
       domains: ['AirHub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart']
     }
-  }
-  
-}
+  }  
+};
 </script>
 
 <style>
